@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+
+    <title>To-do-list</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+        body{
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        </style>
+
+    <link rel="stylesheet" href="output.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body class="dark:bg-dark-background">
+   
+   <!-- Up-Part -->
+
+   <section class="bg-cover px-[10%] bg-bg-mobile-light-mode h-[200px]  sm:bg-bg-desktop-light-mode sm:h-[300px] dark:bg-bg-mobile-dark-mode sm:dark:bg-bg-desktop-dark-mode sm:pt-7 sm:px-[12%] lg:px-[27%]">
+       <header class="flex items-center justify-between pt-10 pb-8 sm:pt-14">
+           <h1 class="text-3xl font-semibold tracking-[0.3em] text-light-background">TODO</h1>
+           <img id="to-dark" class="h-5 cursor-pointer dark:hidden" src="icon-moon.svg" alt="moon">
+           <img id="to-light" class="hidden cursor-pointer dark:block" src="icon-sun.svg" alt="sun">
+       </header>
+       <div id="addItem" class="absolute cursor-pointer  rounded-[50%] border-light-center  h-6 w-6 border-2 z-10 mt-[14px] ml-3 sm:mt-4"></div>
+       <input id="input" type="text" placeholder="Create a new todo..." class="relative w-full px-12 py-4 text-sm font-semibold rounded-md dark:bg-dark-list dark:text-dark-text sm:py-5">
+   </section>
+
+   <!-- Bottom-part -->
+
+   <section id="bottom-part" class="px-[10%] sm:px-[12%] lg:px-[27%]">
+       <ul id="list" class="-mt-[20px] sm:-mt-[35px]">
+           
+       </ul>
+   </section>
+
+   <span class="hidden lg:block fixed w-full text-center bottom-[5vh] text-light-center font-semibold text-lg">Drag and drop to reorder the list</span>
+    
+        <!-- List Items -->
+
+   <template id="listItem">
+    <div draggable="true" class="z-20 flex items-center justify-between px-12 py-2 pl-3 border-b-[1px] rounded-md pr-7 bg-light-background border-light-center dark:bg-dark-list dark:text-dark-text sm:py-4">
+        <div class="flex items-center">
+        <div id="status" onclick="toDoCompleted(this)" class="cursor-pointer  rounded-[50%] border-light-center  h-6 w-6 border-2 z-10">
+            <div class="w-full h-full rounded-[50%] flex justify-center items-center">
+                <img id="taskCompleted" class="hidden w-4 h-4" src="icon-check.svg" alt="">
+            </div>
+        </div>
+        <p id="todoContent" class="px-4"></p>
+    </div>
+        <img id="delete" onclick="deleteTodo(this)" src="icon-cross.svg" alt="delete-todo" class="cursor-pointer">
+    </div>
+  </template>
+
+  <!-- Secondary Menu -->
+
+  <template id="secondaryMenu">
+    <div class="flex items-center bg-light-background justify-between px-3 py-2 text-sm border-b-[1px] rounded-md shadow-2xl border-light-center text-light-center dark:bg-dark-list sm:py-4">
+        <p id="itemsNumber"></p>
+        <p id="clear-completed" onclick="clearCompleted()" class="cursor-pointer">Clear completed</p>
+       </div>
+  </template>
+
+  <!-- Main Menu -->
+
+  <template id="mainMenu">
+    <div class="shadow-2xl bg-light-background border-[0.5px] border-light-center mt-5 rounded-md mx-6 dark:bg-dark-list">
+        <div id="filter-menu" class="flex px-4 py-2 font-semibold justify-evenly text-light-center">
+            <span onclick="filterItems('All', this)" class="cursor-pointer text-filter-selected">All</span>
+            <span onclick="filterItems('Active', this)" class="cursor-pointer">Active</span>
+            <span onclick="filterItems('Completed', this)" class="cursor-pointer">Completed</span>
+        </div>
+    </div>
+  </template>
+
+</body>
+</html>
