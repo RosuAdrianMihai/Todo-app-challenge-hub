@@ -16,7 +16,7 @@ I've implemented the following features:
 - adding a new task
 - deleting a task
 - completing a task
-- drag and drop (it works only for laptops and dekstops tho)
+- drag and drop (it works only for laptops and desktops tho)
 - filter tasks
 - counter for tasks
 - dynamic scrollbar
@@ -24,5 +24,5 @@ I've implemented the following features:
 
 It was a challenge to work organized and write clean code. I had a lot of bugs which I eventually
 solved, improving debugging skills. I liked the process of building this app because it tested
-my problem solving capabilities. 
+my problem-solving capabilities. 
 
