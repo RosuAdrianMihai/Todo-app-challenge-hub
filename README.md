@@ -9,7 +9,7 @@ Technologies used: HTML5, Tailwind CSS, JavaScript
 Project description:
 
 In this project, my main objective was to build a functional Todo app. I've used Tailwind CSS to
-create the website mobile-first. The site is fully responsive, adapting to any device. 
+create a mobile-first website. The site is fully responsive, adapting to any device. 
 
 I've implemented the following features:
 - changing the mode view
